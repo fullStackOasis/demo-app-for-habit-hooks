@@ -50,7 +50,7 @@ habit-sensors --all | habit-snooze --snooze
 There is no output from this command. However, you can see what happened here:
 ```
 cat .habit-hooks/snooze.json
-["a.py", "src/a.py", "src/b.py"]
+["src/a.py", "src/b.py"]
 ```
 And then run:
 ```
