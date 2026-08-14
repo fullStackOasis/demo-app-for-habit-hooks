@@ -14,6 +14,12 @@ python -c "from a import ATest; print(ATest().say_hello())"
 ```
 Expected output is "Hello, Alice!"
 
+## pyproject.toml is required
+
+As of this writing, if pyproject.toml is not included in the project, habit-hooks will fail with an error.
+
+You can test this by simply removing it from the project (delete the file) and then run `habit-hooks`.
+
 # Test snooze
 
 In order to test snooze, check in two files that both have code smells. Example output:
