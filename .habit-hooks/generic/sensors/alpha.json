@@ -1,0 +1,4 @@
+[{"smell":"loose-equality","details":{"maxAllowed":0},"issues":[
+  {"key":"src/x.js","details":{"file":"src/x.js","line":1}},
+  {"key":"src/y.js","details":{"file":"src/y.js","line":1}},
+  {"key":"src/z.js","details":{"file":"src/z.js","line":1}}]}]
