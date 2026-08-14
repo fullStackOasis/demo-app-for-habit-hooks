@@ -37,3 +37,30 @@ Useful tip: rewrite each call site with the signature that feels natural there, 
 src/a.py:7
 src/b.py:4
 ```
+
+## list snoozed files
+
+"Snoozed" files are files that have had "smells" detected, but habit-hooks has been told to ignore them.
+
+Example:
+
+```
+habit-sensors --all | habit-snooze --snooze
+```
+There is no output from this command. However, you can see what happened here:
+```
+cat .habit-hooks/snooze.json
+["a.py", "src/a.py", "src/b.py"]
+```
+And then run:
+```
+habit-snooze --list
+src/a.py
+src/b.py
+```
+Despite the fact that these issues have been snoozed, you can still sense the smells as follows:
+```
+habit-sensors --all --no-snooze
+[{"smell": "too-many-parameters", "details": {}, "issues": [{"key": "src/a.py", "details": {"file": "src/a.py", "line": 7, "column": 9, "message": "Too many arguments in function definition (6 > 5)", "source": "ruff:PLR0913"}}, {"key": "src/b.py", "details": {"file": "src/b.py", "line": 4, "column": 5, "message": "Too many arguments in function definition (7 > 5)", "source": "ruff:PLR0913"}}], "language": "python"}]
+```
+
